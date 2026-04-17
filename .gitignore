@@ -1,14 +1,16 @@
-# ===== Datos (no subir al repo — se regeneran corriendo el notebook) =====
-*.csv
-ecobici_data.csv
-X_train.csv
-X_test.csv
-y_train.csv
-y_test.csv
-*.zip
+# ===== Dataset (no subir — se regenera corriendo el notebook) =====
+# El notebook descarga `ecobici_data.csv` vía gdown y exporta los 4 CSV finales
+# en la carpeta dataset/. Ninguno de esos archivos se versiona.
+dataset/*.csv
+dataset/*.zip
 
-# ===== Mapas interactivos generados =====
-mapa_estaciones.html
+# Por si alguien corre el notebook desde otra ubicación
+*.csv
+!requirements.txt
+
+# ===== Mapas interactivos generados (Folium) =====
+**/mapa_estaciones.html
+**/*.html
 
 # ===== Python =====
 __pycache__/
@@ -26,7 +28,7 @@ ENV/
 
 # ===== Jupyter =====
 .ipynb_checkpoints/
-*.ipynb_checkpoints
+**/.ipynb_checkpoints
 .jupyter/
 
 # ===== IDEs y editores =====
@@ -47,7 +49,7 @@ desktop.ini
 *.bak
 ~$*
 
-# ===== PDFs de render temporal =====
+# ===== PDFs/imágenes de render temporal =====
 *_preview*.jpg
 *_preview*.pdf
 slide_*.jpg

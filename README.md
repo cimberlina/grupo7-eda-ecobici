@@ -38,18 +38,24 @@ A partir del dataset de recorridos realizados en EcoBici durante 2024, se plante
 | Rango temporal | Enero – Diciembre 2024 |
 | Estaciones únicas | ~395 |
 
-El CSV crudo (~800 MB) no se incluye en el repo. El notebook descarga el archivo automáticamente mediante `gdown` desde un mirror de Google Drive en la primera celda de la Sección 1.
+El CSV crudo (~800 MB) y los 4 CSV exportados del pipeline no se incluyen en el repo (están en `.gitignore`). El notebook descarga el archivo crudo automáticamente mediante `gdown` desde un mirror de Google Drive, y exporta los 4 CSV finales en la carpeta `dataset/`. Ver `dataset/README.md` para detalles.
 
 ## Estructura del repositorio
 
 ```
 TP_Final_Grupo7_EcoBici/
-├── README.md                                           ← este archivo
-├── requirements.txt                                    ← dependencias Python
-├── .gitignore                                          ← ignora CSVs y artefactos
-├── TP_Grp7_V1_ecobici_presentation_ready.ipynb         ← notebook principal
-└── Presentacion_Grupo7_Final.pptx                      ← presentación de defensa (6 slides)
+├── README.md                                                   ← este archivo
+├── requirements.txt                                            ← dependencias Python
+├── .gitignore                                                  ← ignora CSVs y artefactos
+├── notebook/
+│   └── TP_Grp7_V1_ecobici_presentation_ready.ipynb             ← notebook principal
+├── presentacion/
+│   └── Presentacion_Grupo7_Final.pptx                          ← presentación de defensa (6 slides)
+└── dataset/
+    └── README.md                                               ← cómo se puebla esta carpeta
 ```
+
+Las carpetas `notebook/`, `presentacion/` y `dataset/` separan el código, la entrega visual y los datos respectivamente. Los CSV del dataset no se versionan — se generan ejecutando el notebook.
 
 ## Cómo ejecutar
 
@@ -69,16 +75,16 @@ source .venv/bin/activate        # Linux / macOS
 pip install -r requirements.txt
 
 # Abrir el notebook
-jupyter notebook TP_Grp7_V1_ecobici_presentation_ready.ipynb
+jupyter notebook notebook/TP_Grp7_V1_ecobici_presentation_ready.ipynb
 ```
 
-Al correr el notebook completo (de arriba a abajo) se generan los 4 archivos CSV exportados en el mismo directorio: `X_train.csv`, `X_test.csv`, `y_train.csv`, `y_test.csv` (listos para cargar directamente en un notebook de modelado).
+Importante: **el notebook debe ejecutarse desde la carpeta `notebook/`** (es el comportamiento por defecto de Jupyter si lo abrís desde ahí). Al correr la Sección 1, el CSV crudo se descarga en `dataset/`; al correr la Sección 12, los 4 CSV finales se exportan en `dataset/`.
 
 Tiempo de ejecución aproximado en una laptop estándar: **5 – 8 minutos** (descarga inicial del dataset incluida).
 
 ## Contenido del notebook
 
-El notebook está organizado en 11 secciones que reflejan el pipeline completo de preparación del dataset:
+El notebook está organizado en 12 secciones que reflejan el pipeline completo de preparación del dataset:
 
 | § | Sección | Cubre |
 |---|---|---|
@@ -95,7 +101,7 @@ El notebook está organizado en 11 secciones que reflejan el pipeline completo d
 | 9 | Escalado | StandardScaler con `fit` solo en train (sin data leakage) |
 | 10 | Verificación final | Shapes · tipos · nulos |
 | 11 | Reducción de dimensionalidad | Consolidación: MI como filtro + cíclico y Haversine como extracción · evaluación de PCA como alternativa general |
-| 12 | Exportación | Generación de los 4 CSV del dataset final |
+| 12 | Exportación | Generación de los 4 CSV del dataset final en `../dataset/` |
 
 ## Decisiones técnicas destacadas
 
@@ -116,14 +122,14 @@ El notebook está organizado en 11 secciones que reflejan el pipeline completo d
 
 ## Resultados del pipeline
 
-**Dataset exportado** listo para modelado:
+**Dataset exportado** a la carpeta `dataset/` (ver `dataset/README.md`):
 
 | Archivo | Contenido | Shape aprox. |
 |---|---|---|
-| `X_train.csv` | Features de entrenamiento escaladas | 2.275.322 × 16 |
-| `X_test.csv` | Features de test escaladas | 975.139 × 16 |
-| `y_train.csv` | Target de entrenamiento | 2.275.322 × 1 |
-| `y_test.csv` | Target de test | 975.139 × 1 |
+| `dataset/X_train.csv` | Features de entrenamiento escaladas | 2.275.322 × 16 |
+| `dataset/X_test.csv` | Features de test escaladas | 975.139 × 16 |
+| `dataset/y_train.csv` | Target de entrenamiento | 2.275.322 × 1 |
+| `dataset/y_test.csv` | Target de test | 975.139 × 1 |
 
 Las features exportadas incluyen: encoding cíclico de tiempo (4 columnas), `es_fin_de_semana` (1), distancia Haversine (1), coordenadas de origen y destino (4), `modelo_bicicleta` label-encoded (1), y dummies de género y día de semana (5 columnas post-OHE con `drop_first=True`).
 
