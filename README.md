@@ -63,8 +63,8 @@ Las carpetas `notebook/`, `presentacion/` y `dataset/` separan el código, la en
 
 ```bash
 # Clonar el repositorio
-git clone <url-del-repo>
-cd TP_Final_Grupo7_EcoBici
+git clone https://github.com/cimberlina/grupo7-eda-ecobici.git
+cd grupo7-eda-ecobici
 
 # Crear entorno virtual (recomendado)
 python -m venv .venv
