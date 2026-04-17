@@ -55,3 +55,6 @@ desktop.ini
 slide_*.jpg
 grade_*.jpg
 thumbnails.jpg
+
+.~lock.*
+Presentacion*.pdf
