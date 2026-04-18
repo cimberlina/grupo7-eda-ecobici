@@ -4,7 +4,7 @@ Esta carpeta **no contiene los archivos CSV** (están listados en `.gitignore`) 
 
 ## Cómo se pueblan los archivos
 
-Al correr el notebook de principio a fin (`notebook/TP_Grp7_V1_ecobici_presentation_ready.ipynb`) esta carpeta queda con los siguientes archivos:
+Al correr el notebook de principio a fin (`notebook/TP_Grp7_V3_ecobici_presentation_ready.ipynb`) esta carpeta queda con los siguientes archivos:
 
 | Archivo | Origen | Tamaño aprox. |
 |---|---|---|

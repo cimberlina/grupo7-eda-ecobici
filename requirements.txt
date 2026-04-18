@@ -1,5 +1,5 @@
 # TP Final · Análisis de Datos · CEIA FIUBA 1B 2026
-# Dependencias del notebook TP_Grp7_V1_ecobici_presentation_ready.ipynb
+# Dependencias del notebook TP_Grp7_V3_ecobici_presentation_ready.ipynb
 # Python 3.10+
 
 pandas>=2.0.0

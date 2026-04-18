@@ -6,8 +6,8 @@ Trabajo práctico integrador de la materia *Análisis de Datos*. Se realiza el a
 
 ## 📓 Visualización del notebook
 
-- **Render completo con mapa interactivo y todos los gráficos** → [Ver en nbviewer](https://nbviewer.org/github/cimberlina/grupo7-eda-ecobici/blob/main/notebook/TP_Grp7_V1_ecobici_presentation_ready.ipynb)
-- **Render estático en GitHub** (sin mapa de Folium, por bloqueo de JS) → [notebook/TP_Grp7_V1_ecobici_presentation_ready.ipynb](notebook/TP_Grp7_V1_ecobici_presentation_ready.ipynb)
+- **Render completo con mapa interactivo y todos los gráficos** → [Ver en nbviewer](https://nbviewer.org/github/cimberlina/grupo7-eda-ecobici/blob/main/notebook/TP_Grp7_V3_ecobici_presentation_ready.ipynb)
+- **Render estático en GitHub** (sin mapa de Folium, por bloqueo de JS) → [notebook/TP_Grp7_V3_ecobici_presentation_ready.ipynb](notebook/TP_Grp7_V3_ecobici_presentation_ready.ipynb)
 
 > El mapa de estaciones de la Sección 4.1 usa Folium (JavaScript) y **GitHub no lo renderiza** por razones de seguridad — aparece el mensaje *"Make this Notebook Trusted to load map"*. Para ver el mapa sin ejecutar el notebook localmente, usar el link de nbviewer de arriba.
 
@@ -55,7 +55,7 @@ TP_Final_Grupo7_EcoBici/
 ├── requirements.txt                                            ← dependencias Python
 ├── .gitignore                                                  ← ignora CSVs y artefactos
 ├── notebook/
-│   └── TP_Grp7_V1_ecobici_presentation_ready.ipynb             ← notebook principal
+│   └── TP_Grp7_V3_ecobici_presentation_ready.ipynb             ← notebook principal
 ├── presentacion/
 │   └── Presentacion_Grupo7_Final.pptx                          ← presentación de defensa (6 slides)
 └── dataset/
@@ -82,7 +82,7 @@ source .venv/bin/activate        # Linux / macOS
 pip install -r requirements.txt
 
 # Abrir el notebook
-jupyter notebook notebook/TP_Grp7_V1_ecobici_presentation_ready.ipynb
+jupyter notebook notebook/TP_Grp7_V3_ecobici_presentation_ready.ipynb
 ```
 
 Importante: **el notebook debe ejecutarse desde la carpeta `notebook/`** (es el comportamiento por defecto de Jupyter si lo abrís desde ahí). Al correr la Sección 1, el CSV crudo se descarga en `dataset/`; al correr la Sección 12, los 4 CSV finales se exportan en `dataset/`.
